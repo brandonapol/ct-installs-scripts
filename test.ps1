@@ -1,9 +1,3 @@
-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser # Optional: Needed to run a remote script the first time
-irm get.scoop.sh | iex
-scoop install nodejs 
-scoop install python
-scoop install git 
-
 $test=@"
 @@@@@@@@@@@@@@@@&BP?~^#@@@@&~~?5B&@@@@@@@@@@@@@@@@
 @@@@@@@@@@@@&5!.     !@@@@@@?     .!5&@@@@@@@@@@@@
@@ -29,3 +23,5 @@ $test=@"
 @@@@@@@@@@@@@@@@@@&     7@@@@@@@@@@@@@@@@@@@@@@@@@
 @@@@@@@@@@@@@@@@@@@@?~^:.Y@@@@@@@@@@@@@@@@@@@@@@@@
 "@
+
+Write-Output $test
