@@ -5,6 +5,8 @@ chmod u+x mac.sh
 brew install python3
 brew install node 
 brew install git 
+brew install postgresql
+
 
 
 echo "@@@@@@@@@@@@@@@@&BP?~^#@@@@&~~?5B&@@@@@@@@@@@@@@@@"
