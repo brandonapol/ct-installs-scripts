@@ -32,11 +32,13 @@ function CT-Installer {
 }
 
 try {
-    if {
+    if (
         Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
         irm get.scoop.sh | iex
-    }
+    )
+    {
     CT-Installer
+    }
 }
 catch {
         $output = "Scoop already installed."
