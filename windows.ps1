@@ -2,6 +2,7 @@ function CT-Installer {
     scoop install nodejs 
     scoop install python
     scoop install git 
+    scoop install postgresql
     $test=@"
 @@@@@@@@@@@@@@@@&BP?~^#@@@@&~~?5B&@@@@@@@@@@@@@@@@
 @@@@@@@@@@@@&5!.     !@@@@@@?     .!5&@@@@@@@@@@@@
