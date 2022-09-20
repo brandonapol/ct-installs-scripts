@@ -12,9 +12,12 @@ In the terminal, copy and paste:
 ```
 
 ## Windows 
-Open your command line interface. Copy and paste:
+Open your command line interface. Copy and paste these TWO commands:
 ```bash 
-TODO
+$InstallFromCodingTemple = Invoke-WebRequest -Uri https://raw.githubusercontent.com/brandonapol/ct-installs-scripts/master/windows.ps1 -UseBasicParsing
+
+Invoke-Expression $($InstallFromCodingTemple.Content)
 ```
 
+Should automatically install everything you need! Happy coding!
     
