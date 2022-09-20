@@ -31,17 +31,10 @@ function CT-Installer {
     Write-Output $test
 }
 
-try {
-    if (
-        Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-        irm get.scoop.sh | iex
-    )
+if (!(Get-Command "scoop"))
     {
-    CT-Installer
+    Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+    irm get.scoop.sh | iex
+
     }
-}
-catch {
-        $output = "Scoop already installed."
-        Write-Output $output 
-        CT-Installer
-}
+CT-Installer
