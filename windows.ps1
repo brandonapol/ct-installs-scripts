@@ -31,7 +31,7 @@ function CT-Installer {
     Write-Output $test
 }
 
-if (!(Get-Command "scoop"))
+if (!(Get-Command "scoop" -ErrorAction SilentlyContinue))
     {
     Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
     irm get.scoop.sh | iex
