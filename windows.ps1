@@ -1,10 +1,8 @@
-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser # Optional: Needed to run a remote script the first time
-irm get.scoop.sh | iex
-scoop install nodejs 
-scoop install python
-scoop install git 
-
-$test=@"
+function CT-Installer {
+    scoop install nodejs 
+    scoop install python
+    scoop install git 
+    $test=@"
 @@@@@@@@@@@@@@@@&BP?~^#@@@@&~~?5B&@@@@@@@@@@@@@@@@
 @@@@@@@@@@@@&5!.     !@@@@@@?     .!5&@@@@@@@@@@@@
 @@@@@@@@@&J.       7@@@@@@@@@@J       .J&@@@@@@@@@
@@ -30,5 +28,18 @@ $test=@"
 @@@@@@@@@@@@@@@@@@@@?~^:.Y@@@@@@@@@@@@@@@@@@@@@@@@
                 Happy coding!!!
 "@
+    Write-Output $test
+}
 
-Write-Output $test
+try {
+    if {
+        Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+        irm get.scoop.sh | iex
+    }
+    CT-Installer
+}
+catch {
+        $output = "Scoop already installed."
+        Write-Output $output 
+        CT-Installer
+}
